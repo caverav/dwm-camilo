@@ -1,4 +1,3 @@
-/* See LICENSE file for copyright and license details. */
 /* Ver archivo LICENSE para detalles de copyright y licencia  */
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
