@@ -1,5 +1,14 @@
 --- drw.c
 +++ drw.c
+@@ -61,7 +61,7 @@ utf8decode(const char *c, long *u, size_t clen)
+ }
+ 
+ Drw *
+-drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h, Visual *visual, unsigned int depth, Colormap cmap)
++drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h)
+ {
+ 	Drw *drw;
+ 
 @@ -71,11 +71,8 @@ drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h
  	drw->root = root;
  	drw->w = w;
@@ -14,6 +23,15 @@
  	drw->fontcount = 0;
  	XSetLineAttributes(dpy, drw->gc, 1, LineSolid, CapButt, JoinMiter);
  
+@@ -89,7 +86,7 @@ drw_resize(Drw *drw, unsigned int w, unsigned int h)
+ 	drw->h = h;
+ 	if (drw->drawable)
+ 		XFreePixmap(drw->dpy, drw->drawable);
+-	drw->drawable = XCreatePixmap(drw->dpy, drw->root, w, h, drw->depth);
++	drw->drawable = XCreatePixmap(drw->dpy, drw->root, w, h, DefaultDepth(drw->dpy, drw->screen));
+ }
+ 
+ void
 @@ -183,15 +180,16 @@ drw_font_free(Fnt *font)
  }
  

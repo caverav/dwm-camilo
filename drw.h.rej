@@ -1,6 +1,16 @@
 --- drw.h
 +++ drw.h
-@@ -43,7 +40,7 @@ typedef struct {
+@@ -30,9 +30,6 @@ typedef struct {
+ 	Display *dpy;
+ 	int screen;
+ 	Window root;
+-	Visual *visual;
+-	unsigned int depth;
+-	Colormap cmap;
+ 	Drawable drawable;
+ 	GC gc;
+ 	ClrScheme *scheme;
+@@ -46,7 +43,7 @@ typedef struct {
  } Extnts;
  
  /* Drawable abstraction */
@@ -9,7 +19,7 @@
  void drw_resize(Drw *, unsigned int, unsigned int);
  void drw_free(Drw *);
  
-@@ -55,7 +52,7 @@ void drw_font_getexts(Fnt *, const char *, unsigned int, Extnts *);
+@@ -58,7 +55,7 @@ void drw_font_getexts(Fnt *, const char *, unsigned int, Extnts *);
  unsigned int drw_font_getexts_width(Fnt *, const char *, unsigned int);
  
  /* Colour abstraction */

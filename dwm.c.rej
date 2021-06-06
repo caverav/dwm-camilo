@@ -1,6 +1,14 @@
 --- dwm.c
 +++ dwm.c
-@@ -1556,8 +1548,7 @@ setup(void)
+@@ -232,7 +230,6 @@ static Monitor *wintomon(Window w);
+ static int xerror(Display *dpy, XErrorEvent *ee);
+ static int xerrordummy(Display *dpy, XErrorEvent *ee);
+ static int xerrorstart(Display *dpy, XErrorEvent *ee);
+-static void xinitvisual();
+ static void zoom(const Arg *arg);
+ 
+ /* variables */
+@@ -1557,8 +1549,7 @@ setup(void)
  	sw = DisplayWidth(dpy, screen);
  	sh = DisplayHeight(dpy, screen);
  	root = RootWindow(dpy, screen);
@@ -10,7 +18,7 @@
  	drw_load_fonts(drw, fonts, LENGTH(fonts));
  	if (!drw->fontcount)
  		die("no fonts could be loaded.\n");
-@@ -1581,12 +1572,12 @@ setup(void)
+@@ -1582,12 +1573,12 @@ setup(void)
  	cursor[CurResize] = drw_cur_create(drw, XC_sizing);
  	cursor[CurMove] = drw_cur_create(drw, XC_fleur);
  	/* init appearance */
@@ -29,7 +37,7 @@
  	/* init bars */
  	updatebars();
  	updatestatus();
-@@ -1799,17 +1790,15 @@ updatebars(void)
+@@ -1800,17 +1791,15 @@ updatebars(void)
  	Monitor *m;
  	XSetWindowAttributes wa = {
  		.override_redirect = True,
