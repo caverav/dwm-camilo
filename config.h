@@ -144,7 +144,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     -1,        XK_period, tagmon,         {.i = +1 } },
 
     /* Keybindings for programs using the format SUPER + ALT + "key" */
-	{ MODKEY|Mod1Mask,      -1,        XK_s,      spawn,          CMD("tabbed -r 2 surf -pe x '.surf/html/homepage.html'") },
+	{ MODKEY|Mod1Mask,      -1,        XK_d,      spawn,          CMD("discord") },
 	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("firefox") },
 	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("kitty --class=pulsemixer pulsemixer") },
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
