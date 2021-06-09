@@ -14,13 +14,13 @@ if [ "$BATCH" = "Ch" ]
 then
     # if [[ $FLAG2 == 1 ]]
     # then
-    #     mplayer ~/Descargas/battery_low_low_2011.mp3 &
+    #     mplayer ~/dwm-camilo/sonidos/battery_low_low_2011.mp3 &
     #     FLAG2=0
     # fi
     FLAG=1
 elif [[ $BATST -le 20 ]] && [[ $FLAG == 1 ]]
 then
-    mplayer ~/Descargas/battery_low_low_2011.mp3 &
+    mplayer ~/dwm-camilo/sonidos/battery_low_low_2011.mp3 &
     kitty sl &
     FLAG=0
     fi
