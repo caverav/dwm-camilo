@@ -9,11 +9,13 @@ static const int horizpadbar       = 6;   /* horizontal padding for statusbar */
 static const int vertpadbar        = 7;   /* vertical padding for statusbar */
 
 /* Mis configuraciones para mi note (Lenovo Ideapad s340), puede no funcionar en todos:(  */
+/* Configuraciones de teclas para controlar volumen y micrófono */
 static const char *upvol[]   = { "/usr/bin/pactl" ,  "set-sink-volume", "0"      , "+5%"   , NULL};
 static const char *downvol[] = { "/usr/bin/pactl" ,  "set-sink-volume", "0"      , "-5%"   , NULL};
 static const char *mutevol[] = { "/usr/bin/pactl" ,  "set-sink-mute"  , "0"      , "toggle", NULL};
 static const char *mutemic[] = { "/usr/bin/amixer",  "set"            , "Capture", "toggle", NULL};
 
+/* Configuraciones para el brillo de la pantalla (todavía no funcionan) */
 static const char *brightup[]       = { "xbacklight", "-inc", "10", NULL};
 static const char *brightdown[]     = { "xbacklight", "-dec", "10", NULL};
 
