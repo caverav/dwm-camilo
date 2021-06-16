@@ -20,6 +20,12 @@ static const char *brightup[]       = { "xbacklight", "-inc", "10", NULL};
 static const char *brightdown[]     = { "xbacklight", "-dec", "10", NULL};
 
 
+//PRINTSCREEN/*
+static const char *screenf[] = {"bash", "/home/camilo/dwm-camilo/screen/full", NULL};
+static const char *screens[] = {"bash","/home/camilo/dwm-camilo/screen/sect",NULL};
+static const char *screenfg[] = {"bash","/home/camilo/dwm-camilo/screen/fullg",NULL};
+static const char *screensg[] = {"bash","/home/camilo/dwm-camilo/screen/sectg",NULL};
+
 /* Mononoki Nerd Font must be installed from AUR nerd-fonts-complete.
  * Otherwise, your default font will be Hack which is found in the standard
  * Arch repos and is listed as a dependency for this build. JoyPixels is also
@@ -171,7 +177,16 @@ static Key keys[] = {
 	{ ControlMask,          XK_e,      XK_n,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(elfeed)'") },
 	{ ControlMask,          XK_e,      XK_s,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(eshell)'") },
 	{ ControlMask,          XK_e,      XK_v,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'") },
-
+    { 0,                -1,             XF86XK_AudioLowerVolume,    spawn,            {.v = downvol    } },
+    { 0,                -1,             XF86XK_AudioMute,           spawn,            {.v = mutevol    } },
+    { 0,                -1,             XF86XK_AudioRaiseVolume,    spawn,            {.v = upvol      } },
+    { 0,                -1,             XF86XK_MonBrightnessUp,     spawn,            {.v = brightup   } },
+    { 0,                -1,             XF86XK_MonBrightnessDown,   spawn,            {.v = brightdown } },
+	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            {.v = mutemic    } },
+	{ 0,                -1,             XK_Print,                   spawn,            {.v = screenfg   } },
+	{ MODKEY|ShiftMask, -1,             XK_s,                       spawn,            {.v = screens    } },
+	{ ShiftMask,        -1,             XK_Print,                   spawn,            {.v = screenf    } },
+	{ MODKEY|ControlMask,-1,            XK_s,                       spawn,            {.v = screensg   } },
 	TAGKEYS(                -1,        XK_1,                      0)
 	TAGKEYS(                -1,        XK_2,                      1)
 	TAGKEYS(                -1,        XK_3,                      2)
@@ -183,13 +198,7 @@ static Key keys[] = {
 	TAGKEYS(                -1,        XK_9,                      8)
 	{ MODKEY|ShiftMask,     -1,        XK_q,	  quit,		      {0} },
     { MODKEY|ShiftMask,     -1,        XK_r,      quit,           {1} },
-    { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-    { 0, -1,                           XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-    { 0, -1,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
-    { 0, -1,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-    { 0, -1,                XF86XK_MonBrightnessUp,    spawn,            {.v = brightup } },
-    { 0, -1,                XF86XK_MonBrightnessDown,  spawn,            {.v = brightdown } },
-	{ 0, -1,                XF86XK_AudioMicMute,       spawn,            {.v = mutemic}},
+    { MODKEY|ShiftMask,                 XK_q,      quit,           {0} },
 };
 
 /* button definitions */

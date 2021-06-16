@@ -1,0 +1,1 @@
+scrot -e 'xclip -selection clipboard -t image/png -i $f' ~/Imágenes/%b%d::%H%M%S.png
