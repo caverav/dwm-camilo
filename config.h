@@ -60,9 +60,9 @@ static const unsigned int alphas[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-//static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-
+/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
+/* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
+static const char *tags[] = { "[main]", "[www]", "[code]", "[study]", "[dis]", "6", "7", "8", "9" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -72,6 +72,7 @@ static const Rule rules[] = {
 	/* { "Gimp",     NULL,       NULL,       0,            1,           -1 }, */
 //	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "pulsemixer",NULL,      NULL,          0,            1,           -1 },
+	{ "discord"   ,NULL,      NULL,          3,            0,           -1 },
 };
 
 /* layout(s) */
@@ -155,7 +156,7 @@ static Key keys[] = {
 
     /* Keybindings for programs using the format SUPER + ALT + "key" */
 	{ MODKEY|Mod1Mask,      -1,        XK_d,      spawn,          CMD("discord") },
-	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("firefox") },
+	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("brave-browser") },
 	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("kitty --class=pulsemixer pulsemixer") },
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
 
