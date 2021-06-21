@@ -26,6 +26,7 @@ static const char *screens[] = {"bash","/home/camilo/dwm-camilo/screen/sect",NUL
 static const char *screenfg[] = {"bash","/home/camilo/dwm-camilo/screen/fullg",NULL};
 static const char *screensg[] = {"bash","/home/camilo/dwm-camilo/screen/sectg",NULL};
 
+static const char *lockscreen[]={"slock",NULL};
 /* Mononoki Nerd Font must be installed from AUR nerd-fonts-complete.
  * Otherwise, your default font will be Hack which is found in the standard
  * Arch repos and is listed as a dependency for this build. JoyPixels is also
@@ -62,7 +63,7 @@ static const unsigned int alphas[][3] = {
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
-static const char *tags[] = { "[main]", "[www]", "[code]", "[study]", "[dis]", "6", "7", "8", "9" };
+static const char *tags[] = { "[main]", "[www]", "[code]", "[study]", "[dis]", "[gaming]", "7", "8", "9" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -72,7 +73,7 @@ static const Rule rules[] = {
 	/* { "Gimp",     NULL,       NULL,       0,            1,           -1 }, */
 //	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "pulsemixer",NULL,      NULL,          0,            1,           -1 },
-	{ "discord"   ,NULL,      NULL,          3,            0,           -1 },
+	{ "discord"   ,NULL,      NULL,          0,            0,           -1 },
 };
 
 /* layout(s) */
@@ -99,7 +100,8 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, CHAIN,    KEY,      toggletag,      {.ui = 1 << TAG} },
 #define CMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+/* helper for spawning shell commands in the pre code-5.0 fashion
+   */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* dmenu */
