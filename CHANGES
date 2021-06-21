@@ -1,2 +1,2 @@
-.xinitrc -> home folder
+.xinitrc -> home folder, depende de compton y feh para fondo de pantalla
 config.h -> depende scrot y kitty
