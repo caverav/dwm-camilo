@@ -21,7 +21,7 @@ then
 elif [[ $BATST -le 20 ]] && [[ $FLAG == 1 ]]
 then
     mplayer ~/dwm-camilo/sonidos/battery_low_low_2011.mp3 &
-    kitty sl &
+    notify-send "Batería baja." "Batería bajo el 20%" &
     FLAG=0
     fi
 #CPU
@@ -51,7 +51,7 @@ icon5="🔊"
  BAT=$(acpi -b | awk '{ split($5,a,":"); print substr($3,0,2), $4, "["a[1]":"a[2]"]" }' | tr -d ',' )
  VOL=$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
  MEM=$(free -m | awk 'NR==2{printf "%s/%sMB\n", $3,$2,$3*100/$2 }')
- HDD=$(df -h | awk 'NR==7{print $3, $5}')
+ HDD=$(df -h | grep home | awk '{print $4 ,$5}')
  TIME=$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')
  MIC=$(amixer -D 'hw:0' | grep Capture | grep "\[" | grep Left | cut -c 42-)
  xsetroot -name "| $icon $cpu% | 🧠 $MEM | ⬇️ $RKBPS kb ⬆️ $TKBPS kb| 💾 $HDD | 🔊 $VOL $MIC | 🔋  $BAT | $TIME"
