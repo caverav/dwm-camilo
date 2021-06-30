@@ -16,8 +16,8 @@ static const char *mutevol[] = { "/usr/bin/pactl" ,  "set-sink-mute"  , "0"     
 static const char *mutemic[] = { "/usr/bin/amixer",  "set"            , "Capture", "toggle", NULL};
 
 /* Configuraciones para el brillo de la pantalla (todavía no funcionan) */
-static const char *brightup[]       = { "xbacklight", "-inc", "10", NULL};
-static const char *brightdown[]     = { "xbacklight", "-dec", "10", NULL};
+static const char *brightup[]       = { "brightnessctl", "s", "10%+", NULL };
+static const char *brightdown[]     = { "brightnessctl", "s", "10%-", NULL };
 
 
 //PRINTSCREEN/*

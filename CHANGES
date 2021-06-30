@@ -1,2 +1,3 @@
-.xinitrc -> home folder, depende de compton y feh para fondo de pantalla
-config.h -> depende scrot y kitty
+.xinitrc -> cambiar carpeta personal, depende de compton y feh para fondo de pantalla
+config.h -> depende scrot y kitty, brave, pcmanfm
+general -> dmenu, brightnessctl
