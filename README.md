@@ -14,7 +14,7 @@ Tabla de Contenidos
 
 # Sobre DWM  <a name="about-dwm"></a>
 
-![img](https://github.com/caverav/dwm-camilo/dwm-camilo.png "dmenu-distrotube")
+![img](https://github.com/caverav/dwm-camilo/blob/main/camilo-dwm.png "dmenu-distrotube")
 
 
 
