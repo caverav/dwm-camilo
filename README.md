@@ -1,27 +1,15 @@
 
-
-
-
-Table of Contents
+Tabla de Contenidos
 ==========================================================
 
--   [About DWM](#about-dwm)
-    -   [The patches I added to this build
-        include:](#the-patches-i-added-to-this-build-include)
-    -   [The dependencies for dwm-distrotube
-        include:](#the-dependencies-for-dwm-distrotube-include)
--   [Installing dwm-distrotube on Arch
-    Linux](#installing-dwm-distrotube-on-arch-linux)
--   [Installing dwm-distrotube on other Linux
-    distributions](#installing-dwm-distrotube-on-other-linux-distributions)
--   [My Keybindings](#my-keybindings)
-    -   [Main keybindings](#main-keybindings)
-    -   [Layout controls](#layout-controls)
-    -   [Application controls](#application-controls)
-    -   [Doom emacs](#doom-emacs)
--   [Running dwm](#running-dwm)
--   [Configuring dwm-distrotube](#configuring-dwm-distrotube)
--   [Adding an autostart file](#adding-an-autostart-file)
+-   [Sobre DWM](#about-dwm)
+    -   [Parches que incluye:](#the-patches-i-added-to-this-build-include)
+    -   [Dependencias:](#the-dependencies-for-dwm-include)
+-   [Instalar dwm-camilo en Arch Linux](#installing-dwm-on-arch-linux)
+-   [Instalar dwm-camilo en cualquier otra distribución de Linux](#installing-dwm-distrotube-on-other-linux-distributions)
+-   [Mis atajos](#my-keybindings)
+-   [Ejecutar dwm](#running-dwm)
+-   [Configurar dwm](#configuring-dwm)
 
 
 # Sobre DWM  <a name="about-dwm"></a>
@@ -32,7 +20,7 @@ Table of Contents
 
 
 
-## Incluye los siguientes parches:
+## Parches que incluye: <a name="the-patches-i-added-to-this-build-include"></a>
 
 -   alpha (para transparencia)
 -   attachaside (nuevas ventanas aparecen en stack en vez de master)
@@ -45,13 +33,15 @@ Table of Contents
 
 
 
-## Dependencias:
+## Dependencias: <a name="the-dependencies-for-dwm-include"></a>
 
 Obligados:
 -   libxft
 -   ttf-hack
 -   ttf-joypixels
 -   dmenu (lanzador de aplicaciones)
+
+
 Por defecto en configuraciones:
 -   compton (compositor)
 -   feh   (para fondo de pantalla)
@@ -62,7 +52,7 @@ Por defecto en configuraciones:
 
 Si estás en un sistema basado en Ubuntu hace falta installar libx11-dev y xorg-dev.
 
-# Instalar dwm-camilo en Arch Linux
+# Instalar dwm-camilo en Arch Linux <a name="installing-dwm-on-arch-linux"></a>
 
 Descargar PKGBUILD y ejecutar:
 
@@ -72,7 +62,7 @@ Esto creará un archivo terminado en .pkg.tar.zst, seguido ejecuta:
 
 `sudo pacman -U *.pkg.tar.zst`
 
-# Instalar dwm-camilo en cualquier otra distribución de Linux
+# Instalar dwm-camilo en cualquier otra distribución de Linux <a name="installing-dwm-distrotube-on-other-linux-distributions"></a>
 
 Download the source code from this repository or use a git clone:
 
@@ -82,7 +72,7 @@ Download the source code from this repository or use a git clone:
 
 `NOTA:` Reemplazará cualquier versión de dwm que tengas instalada.
 
-# Mis atajos
+# Mis atajos <a name="my-keybindings"></a>
 
 MODKEY está configurada como la tecla SUPER, o más bien conocida como la tecla Windows.
 
@@ -150,19 +140,19 @@ Doom emacs
 Controles de sistema
 ---------------------
 Atajo | Acción
------   ------
-AudioLowerVolume|  bajar volumen
-AudioMute|        ensordecer volumen
-AudioRaiseVolume|    subir volumen
-MonBrightnessUp|   subir brillo  
-MonBrightnessDown|  bajar brillo
-AudioMicMute|   apagar micrófono
-PrintScreen| captura de pantalla completa
-MODKEY + Shift + s|captura de sección de pantalla copiada al portapapeles
-Shift + PrintScreen|captura de pantalla completa copiada al portapapeles
-MODKEY + Control + s|captura de sección de pantalla
+----- |  ------
+AudioLowerVolume|  bajar volumen|
+AudioMute|        ensordecer volumen|
+AudioRaiseVolume|    subir volumen|
+MonBrightnessUp|   subir brillo  |
+MonBrightnessDown|  bajar brillo|
+AudioMicMute|   apagar micrófono|
+PrintScreen| captura de pantalla completa|
+MODKEY + Shift + s|captura de sección de pantalla copiada al portapapeles|
+Shift + PrintScreen|captura de pantalla completa copiada al portapapeles|
+MODKEY + Control + s|captura de sección de pantalla|
 
-# Ejecutar dwm
+# Ejecutar dwm <a name="running-dwm"></a>
 
 Si no ocupas un gestor de inicio de sesión (como lightdm), entonces puedes añadir manualmente lo siguiente a .xinitrc para iniciar con startx:
 
@@ -179,7 +169,7 @@ Si usas un gestor de inicio de sesión, corrobore que tiene un archivo llamado d
     Type=XSession
 
 
-# Configurar dwm
+# Configurar dwm <a name="configuring-dwm"></a>
 
 Para configurar dwm solo se debe cambiar la configuración en *config.h* y luego recompilar:
 
