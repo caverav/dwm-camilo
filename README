@@ -1,32 +1,187 @@
-Requerimientos
-------------
-Se necesitan las cabeceras Xlib.
-GNU/Linux c:
-
-
-Instalación
-------------
-Editar config.mk si quiere optimizar para su computador en específico
-(es instalado en /usr/local por defecto)
-
-Después en la carpeta escriba:
-
-    make clean install        (con sudo o permisos de superusuario si es necesario)
 
 
 
-Ejecutar dwm
------------
-Añada al .xinitrc lo siguiente para iniciar con startx:
 
-    exec dwm
+Table of Contents
+==========================================================
 
-Para conectar dwm a un entorno DISPLAY específico:
+-   [About DWM](#about-dwm)
+    -   [The patches I added to this build
+        include:](#the-patches-i-added-to-this-build-include)
+    -   [The dependencies for dwm-distrotube
+        include:](#the-dependencies-for-dwm-distrotube-include)
+-   [Installing dwm-distrotube on Arch
+    Linux](#installing-dwm-distrotube-on-arch-linux)
+-   [Installing dwm-distrotube on other Linux
+    distributions](#installing-dwm-distrotube-on-other-linux-distributions)
+-   [My Keybindings](#my-keybindings)
+    -   [Main keybindings](#main-keybindings)
+    -   [Layout controls](#layout-controls)
+    -   [Application controls](#application-controls)
+    -   [Doom emacs](#doom-emacs)
+-   [Running dwm](#running-dwm)
+-   [Configuring dwm-distrotube](#configuring-dwm-distrotube)
+-   [Adding an autostart file](#adding-an-autostart-file)
 
-    DISPLAY=foo.bar:1 exec dwm
 
-(Esto va a iniciar dwm en el display :1 del host foo.bar.)
+# Sobre DWM  <a name="about-dwm"></a>
 
-Configuración
--------------
-Si son cambios simples se puede hacer editando el config.h y recompilando el código fuente.
+![img](https://gitlab.com/dwt1/dotfiles/raw/master/.screenshots/dotfiles04-thumb.png "dmenu-distrotube")
+
+
+
+
+
+## Incluye los siguientes parches:
+
+-   alpha (para transparencia)
+-   attachaside (nuevas ventanas aparecen en stack en vez de master)
+-   cyclelayouts (recorrer los diferentes diseños)
+-   gridmode (diseño de grid)
+-   restartsig (se puede reiniciar dwm con un comando)
+-   rotatestack (mover una ventana entre el stack)
+-   statuspadding (padding configurable)
+-   uselessgap (añade espacio cuando hay más de una ventana)
+
+
+
+## Dependencias:
+
+Obligados:
+-   libxft
+-   ttf-hack
+-   ttf-joypixels
+-   dmenu (lanzador de aplicaciones)
+Por defecto en configuraciones:
+-   compton (compositor)
+-   feh   (para fondo de pantalla)
+-   kitty (terminal)
+-   scrot (para capturas)
+-   brightnessctl (control de brillo)
+-   pcmanfm (navegador de archivos)
+
+Si estás en un sistema basado en Ubuntu hace falta installar libx11-dev y xorg-dev.
+
+# Instalar dwm-camilo en Arch Linux
+
+Descargar PKGBUILD y ejecutar:
+
+`makepkg -cf`
+
+Esto creará un archivo terminado en .pkg.tar.zst, seguido ejecuta:
+
+`sudo pacman -U *.pkg.tar.zst`
+
+# Instalar dwm-camilo en cualquier otra distribución de Linux
+
+Download the source code from this repository or use a git clone:
+
+    git clone https://github.com/caverav/dwm-camilo.git
+    cd dwm-camilo
+    sudo make clean install
+
+`NOTA:` Reemplazará cualquier versión de dwm que tengas instalada.
+
+# Mis atajos
+
+MODKEY está configurada como la tecla SUPER, o más bien conocida como la tecla Windows.
+
+Principales
+----------------
+
+| Atajo              |Acción                                                     |
+| -------------------------|-------------------------------------------------------------- |
+| MODKEY + RETURN          |abre terminal (kitty pero se puede cambiar)           |
+| MODKEY + SHIFT + RETURN  |abre lanzador (dmenu pero se puede cambiar)                  |
+| MODKEY + SHIFT + c       |cierra ventana enfocada                                       |
+| MODKEY + SHIFT + r       |reinicia dwm                                                   |
+| MODKEY + SHIFT + q       |sale de dwm                                                      |
+| MODKEY + b               |esconde el panel                                                |
+| MODKEY + 1-9             |cambia de espacio de trabajo (1-9)                                |
+| MODKEY + SHIFT + 1-9     |manda ventana enfocada al espacio de trabajo (1-9)                         |
+| MODKEY + j               |focus stack +1 (enfoca la siguiente ventana en el stack)   |
+| MODKEY + k               |focus stack -1 (enfoca la ventana anterior en el stack)   |
+| MODKEY + SHIFT + j       |rotate stack +1 (rota la ventana en stack)             |
+| MODKEY + SHIFT + k       |rotate stack -1 (rota la ventana en stack)            |
+| MODKEY + h               |setmfact -0.05 (expandir ventana) |
+| MODKEY + l               |setmfact +0.05 (achicar ventana)|
+| MODKEY + .               |focusmon +1 (enfoca el siguiente monitor)|
+| MODKEY + ,               |focusmon -1 (enfoca el monitor anterior)|
+
+
+
+Control de diseño
+---------------
+
+  Atajo                     |  Acción|
+  ------------------------ |------------------------|
+  MODKEY + d               |vista de filas|
+  MODKEY + i               |vista de columnas|
+  MODKEY + TAB             |anterior diseño (-1)|
+  MODKEY + SHIFT + TAB     |próximo diseño (+1)|
+  MODKEY + SPACE           |cambiar diseño|
+  MODKEY + SHIFT + SPACE   |cambiar estado flotante|
+  MODKEY + t               |master + stack|
+  MODKEY + f               |flotantes|
+  MODKEY + m               |maximizado|
+  MODKEY + g               |grid|
+
+Controles de aplicaciones
+--------------------
+
+  Keybinding        | Action
+  ------------------| ----------------------------------------------------------------------------------
+  MODKEY + ALT + b  | abrir brave (navegador web)
+  MODKEY + ALT + f  | abrir pcmanfm (navegador de archivos)
+
+Doom emacs
+----------
+
+  Keybinding     |Action
+  -------------- |----------------------------------------------------------
+  CTRL + e + e   |emacsclient -c -a \'emacs\'\`
+  CTRL + e + d   |emacsclient -c -a \'emacs\' --eval \'(dired nil)\'
+  CTRL + e + m   |emacsclient -c -a \'emacs\' --eval \'(mu4e)\'
+  CTRL + e + b   |emacsclient -c -a \'emacs\' --eval \'(ibuffer)\'
+  CTRL + e + n   |emacsclient -c -a \'emacs\' --eval \'(elfeed)\'
+  CTRL + e + s   |emacsclient -c -a \'emacs\' --eval \'(eshell)\'
+  CTRL + e + v   |emacsclient -c -a \'emacs\' --eval \'(+vterm/here nil)\'
+
+Controles de sistema
+---------------------
+Atajo | Acción
+-----   ------
+AudioLowerVolume|  bajar volumen
+AudioMute|        ensordecer volumen
+AudioRaiseVolume|    subir volumen
+MonBrightnessUp|   subir brillo  
+MonBrightnessDown|  bajar brillo
+AudioMicMute|   apagar micrófono
+PrintScreen| captura de pantalla completa
+MODKEY + Shift + s|captura de sección de pantalla copiada al portapapeles
+Shift + PrintScreen|captura de pantalla completa copiada al portapapeles
+MODKEY + Control + s|captura de sección de pantalla
+
+# Ejecutar dwm
+
+Si no ocupas un gestor de inicio de sesión (como lightdm), entonces puedes añadir manualmente lo siguiente a .xinitrc para iniciar con startx:
+
+`exec dwm`
+
+Si usas un gestor de inicio de sesión, corrobore que tiene un archivo llamado dwm.desktop en *usr/share/xsessions*.  Debería verse de esta forma:
+
+    [Desktop Entry]
+    Encoding=UTF-8
+    Name=Dwm
+    Comment=Dynamic window manager
+    Exec=dwm
+    Icon=dwm
+    Type=XSession
+
+
+# Configurar dwm
+
+Para configurar dwm solo se debe cambiar la configuración en *config.h* y luego recompilar:
+
+`sudo make clean install`
+
