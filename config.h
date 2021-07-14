@@ -21,12 +21,12 @@ static const char *brightdown[]     = { "brightnessctl", "s", "10%-", NULL };
 
 
 //PRINTSCREEN/*
-static const char *screenf[] = {"bash", "/home/camilo/dwm-camilo/screen/full", NULL};
-static const char *screens[] = {"bash","/home/camilo/dwm-camilo/screen/sect",NULL};
-static const char *screenfg[] = {"bash","/home/camilo/dwm-camilo/screen/fullg",NULL};
-static const char *screensg[] = {"bash","/home/camilo/dwm-camilo/screen/sectg",NULL};
+static const char *screenf[] = {"bash", "~/dwm-camilo/screen/full", NULL};
+static const char *screens[] = {"bash","~/camilo/dwm-camilo/screen/sect",NULL};
+static const char *screenfg[] = {"bash","~/camilo/dwm-camilo/screen/fullg",NULL};
+static const char *screensg[] = {"bash","~/camilo/dwm-camilo/screen/sectg",NULL};
 
-static const char *lockscreen[]={"slock",NULL};
+/* static const char *lockscreen[]={"slock",NULL}; */
 /* Mononoki Nerd Font must be installed from AUR nerd-fonts-complete.
  * Otherwise, your default font will be Hack which is found in the standard
  * Arch repos and is listed as a dependency for this build. JoyPixels is also
@@ -107,7 +107,7 @@ static const Layout layouts[] = {
 /* dmenu */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* If you are using the standard dmenu program, use the following. */
-static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL };
+static const char *dmenucmd[]    = { "dmenu_run", "-p", "Ejecutar: ", NULL };
 /* If you are using the dmenu-distrotube-git program, use the following for a cooler dmenu! */
 /* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
 
