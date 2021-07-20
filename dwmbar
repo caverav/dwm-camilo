@@ -1,28 +1,25 @@
 #!/bin/bash
 FLAG=0
-FLAG2=1
+FLAG2=0
 while true; do
 #BAT CHECK
 
 BATCH=$(acpi -b | awk '{ split($5,a,":"); print substr($3,0,2), $4, "["a[1]":"a[2]"]" }' | awk '{print $1}')
 BATST=$(acpi -b | awk '{ split($5,a,":"); print substr($3,0,2), $4, "["a[1]":"a[2]"]" }' | awk '{print $2}' | tr -d '%,')
-# if [ "$BATCH" = "Di" ]
-# then
-#     FLAG2=1
-# fi
 if [ "$BATCH" = "Ch" ]
 then
-    # if [[ $FLAG2 == 1 ]]
-    # then
-    #     mplayer ~/dwm-camilo/sonidos/battery_low_low_2011.mp3 &
-    #     FLAG2=0
-    # fi
     FLAG=1
-elif [[ $BATST -le 20 ]] && [[ $FLAG == 1 ]]
+    FLAG2=1
+elif [[ $BATST -le 5 ]] && [[ $FLAG == 1 ]]
+then
+    mplayer ~/dwm-camilo/sonidos/battery_low_low_2011.mp3 &
+    notify-send -u critical "Batería baja." "Batería bajo el 5%" &
+    FLAG=0
+elif [[ $BATST -le 20 ]] && [[ $FLAG2 == 1 ]]
 then
     mplayer ~/dwm-camilo/sonidos/battery_low_low_2011.mp3 &
     notify-send "Batería baja." "Batería bajo el 20%" &
-    FLAG=0
+    FLAG2=0
     fi
 #CPU
 read cpu a b c previdle rest < /proc/stat
@@ -57,5 +54,4 @@ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
  MIC=$(amixer -D 'hw:0' | grep Capture | grep "\[" | grep Left | cut -c 42-)
  SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5-)
  xsetroot -name "| $icon $cpu% | 🧠 $MEM | ⬇️ $RKBPS kb ⬆️ $TKBPS kb $SSID | 💾 $HDD | 🔊 $VOL $MIC | 🔋  $BAT | $TIME"
- sleep 1s
 done &
