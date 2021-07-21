@@ -115,7 +115,7 @@ static const char *dmenucmd[]    = { "dmenu_run", "-p", "Ejecutar: ", NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
-static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "kitty", "-w", "''", NULL };
+static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "alacritty", "-w", "''", NULL };
 
 static Key keys[] = {
 	/* modifier             chain key  key        function        argument */
@@ -159,7 +159,7 @@ static Key keys[] = {
     /* Keybindings for programs using the format SUPER + ALT + "key" */
 	{ MODKEY|Mod1Mask,      -1,        XK_d,      spawn,          CMD("discord") },
 	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("brave-browser") },
-	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("kitty --class=pulsemixer pulsemixer") },
+	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("alacritty --class=pulsemixer pulsemixer") },
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
 
     /* Dmenu scripts launched with emacs-style keychords SUPER + p followed by "key" */
