@@ -51,7 +51,8 @@ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
  MEM=$(free -m | awk 'NR==2{printf "%s/%sMB\n", $3,$2,$3*100/$2 }')
  HDD=$(df -h | grep home | awk '{print $4 ,$5}')
  TIME=$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')
- MIC=$(amixer -D 'hw:0' | grep Capture | grep "\[" | grep Left | cut -c 42-)
- SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5-)
- xsetroot -name "| $icon $cpu% | 🧠 $MEM | ⬇️ $RKBPS kb ⬆️ $TKBPS kb $SSID | 💾 $HDD | 🔊 $VOL $MIC | 🔋  $BAT | $TIME"
+ MIC=$(amixer -D 'hw:0' | grep Capture | grep '\[' | grep Left | cut -c 43- | sed  -e 's/]//')
+ MUTED=$(amixer sget Master | grep Left: | cut -d '[' -f 3 | sed -e 's/\]//')
+ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -d : -f 2)
+ xsetroot -name "| $icon $cpu% | 🧠 $MEM | ⬇️ $RKBPS kb ⬆️ $TKBPS kb $SSID | 💾 $HDD | 🔊 $VOL $MUTED | Mic:$MIC | 🔋  $BAT | $TIME"
 done &
