@@ -45,7 +45,7 @@ Obligados:
 Por defecto en configuraciones:
 -   compton (compositor)
 -   feh   (para fondo de pantalla)
--   kitty (terminal)
+-   alacritty (terminal)
 -   scrot (para capturas)
 -   brightnessctl (control de brillo)
 -   pcmanfm (navegador de archivos)
@@ -81,7 +81,7 @@ Principales
 
 | Atajo              |Acción                                                     |
 | -------------------------|-------------------------------------------------------------- |
-| MODKEY + RETURN          |abre terminal (kitty pero se puede cambiar)           |
+| MODKEY + RETURN          |abre terminal (alacritty pero se puede cambiar)           |
 | MODKEY + SHIFT + RETURN  |abre lanzador (dmenu pero se puede cambiar)                  |
 | MODKEY + SHIFT + c       |cierra ventana enfocada                                       |
 | MODKEY + SHIFT + r       |reinicia dwm                                                   |
