@@ -5,8 +5,8 @@ static const unsigned int snap     = 32;  /* snap pixel */
 static const unsigned int gappx    = 19;   /* pixel gap between clients */
 static const int showbar           = 1;   /* 0 means no bar */
 static const int topbar            = 1;   /* 0 means bottom bar */
-static const int horizpadbar       = 6;   /* horizontal padding for statusbar */
-static const int vertpadbar        = 7;   /* vertical padding for statusbar */
+static const int horizpadbar       = 5;   /* horizontal padding for statusbar */
+static const int vertpadbar        = 6;   /* vertical padding for statusbar */
 
 /* Mis configuraciones para mi note (Lenovo Ideapad s340), puede no funcionar en todos:(  */
 /* Configuraciones de teclas para controlar volumen y micrófono */
@@ -32,8 +32,8 @@ static const char *screensg[] = {"bash","~/camilo/dwm-camilo/screen/sectg",NULL}
  * Arch repos and is listed as a dependency for this build. JoyPixels is also
  * a hard dependency and makes colored fonts and emojis possible.
  */
-static const char *fonts[]     = {"Mononoki Nerd Font:size=9:antialias=true:autohint=true",
-                                  "Hack:size=8:antialias=true:autohint=true",
+static const char *fonts[]     = {"Knack Nerd Font:size=11:antialias=true:autohint=true",
+                                  /* "Hack Nerd Font:size=8:antialias=true:autohint=true", */
                                   "JoyPixels:size=10:antialias=true:autohint=true",
                                   "monospace:size=10"
 						     	};
@@ -63,7 +63,7 @@ static const unsigned int alphas[][3] = {
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
-static const char *tags[] = { "[main]", "[www]", "[code]", "[study]", "[dis]", "[gaming]", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "std", "dis", "", "", "8", "9" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class

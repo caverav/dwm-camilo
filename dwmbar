@@ -52,7 +52,13 @@ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
  HDD=$(df -h | grep home | awk '{print $4 ,$5}')
  TIME=$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')
  MIC=$(amixer -D 'hw:0' | grep Capture | grep '\[' | grep Left | cut -c 43- | sed  -e 's/]//')
+ if [ "$MIC" = "off" ]
+ then
+     MICICON=""
+ else
+     MICICON=""
+     fi
  MUTED=$(amixer sget Master | grep Left: | cut -d '[' -f 3 | sed -e 's/\]//')
  SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -d : -f 2)
- xsetroot -name "| $icon $cpu% | 🧠 $MEM | $SSID ⬇️ $RKBPS kb ⬆️ $TKBPS kb | 💾 $HDD | 🔊 $VOL $MUTED | $MIC | 🔋  $BAT | $TIME"
+ xsetroot -name "| $icon $cpu% | 🧠 $MEM | $SSID ⬇️ $RKBPS kb ⬆️ $TKBPS kb | 💾 $HDD | 🔊 $VOL $MUTED | $MICICON | 🔋  $BAT | $TIME"
 done &
