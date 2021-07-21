@@ -22,9 +22,9 @@ static const char *brightdown[]     = { "brightnessctl", "s", "10%-", NULL };
 
 //PRINTSCREEN/*
 static const char *screenf[] = {"bash", "~/dwm-camilo/screen/full", NULL};
-static const char *screens[] = {"bash","~/camilo/dwm-camilo/screen/sect",NULL};
-static const char *screenfg[] = {"bash","~/camilo/dwm-camilo/screen/fullg",NULL};
-static const char *screensg[] = {"bash","~/camilo/dwm-camilo/screen/sectg",NULL};
+static const char *screens[] = {"bash","~/dwm-camilo/screen/sect",NULL};
+static const char *screenfg[] = {"bash","~/dwm-camilo/screen/fullg",NULL};
+static const char *screensg[] = {"bash","~/dwm-camilo/screen/sectg",NULL};
 
 /* static const char *lockscreen[]={"slock",NULL}; */
 /* Mononoki Nerd Font must be installed from AUR nerd-fonts-complete.
