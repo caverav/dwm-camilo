@@ -112,7 +112,7 @@ static const char *dmenucmd[]    = { "dmenu_run", "-p", "Ejecutar: ", NULL };
 /* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
 
 /* the st terminal with tabbed */
-static const char *termcmd[]     = { "kitty", NULL };
+static const char *termcmd[]     = { "alacritty", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "kitty", "-w", "''", NULL };
