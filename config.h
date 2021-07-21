@@ -188,7 +188,7 @@ static Key keys[] = {
 	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            {.v = mutemic    } },
 	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            CMD("bash ~/dwm-camilo/scripts/notimic.sh") },
 	/* { 0,                -1,             XF86XK_SplitScreen,         spawn,            {.v = lockscreen } }, */
-	{ 0,                -1,             XK_Print,                   spawn,            {.v = screenfg   } },
+	{ 0,                -1,             XK_Print,                   spawn,            CMD("bash ~/dwm-camilo/screen/fullg") },
 	{ MODKEY|ShiftMask, -1,             XK_s,                       spawn,            {.v = screens    } },
 	{ ShiftMask,        -1,             XK_Print,                   spawn,            {.v = screenf    } },
 	{ MODKEY|ControlMask,-1,            XK_s,                       spawn,            {.v = screensg   } },
