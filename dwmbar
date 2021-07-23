@@ -60,5 +60,5 @@ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
      fi
  MUTED=$(amixer sget Master | grep Left: | cut -d '[' -f 3 | sed -e 's/\]//')
  SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -d : -f 2)
- xsetroot -name "| $icon $cpu% | 🧠 $MEM | $SSID ⬇️ $RKBPS kb ⬆️ $TKBPS kb | 💾 $HDD | 🔊 $VOL $MUTED | $MICICON | 🔋  $BAT | $TIME"
+ xsetroot -name "| $icon $cpu% | 🧠 $MEM |  $SSID ⬇️ $RKBPS kb ⬆️ $TKBPS kb | 💾 $HDD | 🔊 $VOL $MUTED | $MICICON | 🔋$BAT | $TIME"
 done &

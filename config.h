@@ -32,7 +32,7 @@ static const char *screensg[] = {"bash","~/dwm-camilo/screen/sectg",NULL};
  * Arch repos and is listed as a dependency for this build. JoyPixels is also
  * a hard dependency and makes colored fonts and emojis possible.
  */
-static const char *fonts[]     = {"Knack Nerd Font:size=11:antialias=true:autohint=true",
+static const char *fonts[]     = {"Iosevka Nerd Font:size=11.5:antialias=true:autohint=true",
                                   /* "Hack Nerd Font:size=8:antialias=true:autohint=true", */
                                   "JoyPixels:size=10:antialias=true:autohint=true",
                                   "monospace:size=10"
