@@ -36,13 +36,15 @@ Tabla de Contenidos
 ## Dependencias: <a name="the-dependencies-for-dwm-include"></a>
 
 Obligados:
+-   Nerd Fonts
 -   libxft
 -   ttf-hack
 -   ttf-joypixels
 -   dmenu (lanzador de aplicaciones)
 
 
-Por defecto en configuraciones:
+Por defecto en configuraciones (se pueden cambiar):
+-   brave (navegador web)
 -   compton (compositor)
 -   feh   (para fondo de pantalla)
 -   alacritty (terminal)
