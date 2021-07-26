@@ -5,7 +5,6 @@ Tabla de Contenidos
 -   [Sobre DWM](#about-dwm)
     -   [Parches que incluye:](#the-patches-i-added-to-this-build-include)
     -   [Dependencias:](#the-dependencies-for-dwm-include)
--   [Instalar dwm-camilo en Arch Linux](#installing-dwm-on-arch-linux)
 -   [Instalar dwm-camilo en cualquier otra distribución de Linux](#installing-dwm-distrotube-on-other-linux-distributions)
 -   [Mis atajos](#my-keybindings)
 -   [Ejecutar dwm](#running-dwm)
