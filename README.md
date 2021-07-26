@@ -44,7 +44,6 @@ Obligados:
 
 
 Por defecto en configuraciones (se pueden cambiar):
--   brave (navegador web)
 -   compton (compositor)
 -   feh   (para fondo de pantalla)
 -   alacritty (terminal)
@@ -123,7 +122,7 @@ Controles de aplicaciones
 
   Keybinding        | Action
   ------------------| ----------------------------------------------------------------------------------
-  MODKEY + ALT + b  | abrir brave (navegador web)
+  MODKEY + ALT + b  | abrir navegador web
   MODKEY + ALT + f  | abrir pcmanfm (navegador de archivos)
 
 Doom emacs
