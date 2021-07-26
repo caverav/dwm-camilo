@@ -53,25 +53,15 @@ Por defecto en configuraciones (se pueden cambiar):
 
 Si estás en un sistema basado en Ubuntu hace falta installar libx11-dev y xorg-dev.
 
-# Instalar dwm-camilo en Arch Linux <a name="installing-dwm-on-arch-linux"></a>
+# Instalar dwm-camilo <a name="installing-dwm-distrotube-on-other-linux-distributions"></a>
 
-Descargar PKGBUILD y ejecutar:
-
-`makepkg -cf`
-
-Esto creará un archivo terminado en .pkg.tar.zst, seguido ejecuta:
-
-`sudo pacman -U *.pkg.tar.zst`
-
-# Instalar dwm-camilo en cualquier otra distribución de Linux <a name="installing-dwm-distrotube-on-other-linux-distributions"></a>
-
-Download the source code from this repository or use a git clone:
+Clone el repositorio y compile:
 
     git clone https://github.com/caverav/dwm-camilo.git
     cd dwm-camilo
     sudo make clean install
 
-`NOTA:` Reemplazará cualquier versión de dwm que tengas instalada.
+>`NOTA:` Reemplazará cualquier versión de dwm que tengas instalada.
 
 # Mis atajos <a name="my-keybindings"></a>
 
