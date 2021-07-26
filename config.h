@@ -158,7 +158,7 @@ static Key keys[] = {
 
     /* Keybindings for programs using the format SUPER + ALT + "key" */
 	{ MODKEY|Mod1Mask,      -1,        XK_d,      spawn,          CMD("discord") },
-	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("brave-browser") },
+	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("sensible-browser") },
 	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("kitty --class=pulsemixer pulsemixer") },
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
 
