@@ -2,7 +2,7 @@
 /* appearance */
 static const unsigned int borderpx = 2;   /* border pixel of windows */
 static const unsigned int snap     = 32;  /* snap pixel */
-static const unsigned int gappx    = 25;   /* pixel gap between clients */
+static const unsigned int gappx    = 5;   /* pixel gap between clients */
 static const int showbar           = 1;   /* 0 means no bar */
 static const int topbar            = 1;   /* 0 means bottom bar */
 static const int horizpadbar       = 5;   /* horizontal padding for statusbar */
@@ -32,7 +32,7 @@ static const char *screensg[] = {"bash","~/dwm-camilo/screen/sectg",NULL};
  * Arch repos and is listed as a dependency for this build. JoyPixels is also
  * a hard dependency and makes colored fonts and emojis possible.
  */
-static const char *fonts[]     = {"Iosevka Nerd Font:size=11.5:antialias=true:autohint=true",
+static const char *fonts[]     = {"Hack Nerd Font:size=11.5:antialias=true:autohint=true",
                                   /* "Hack Nerd Font:size=8:antialias=true:autohint=true", */
                                   "JoyPixels:size=10:antialias=true:autohint=true",
                                   "monospace:size=10"
@@ -63,7 +63,7 @@ static const unsigned int alphas[][3] = {
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
-static const char *tags[] = { "", "", "", "std", "dis", "", "", "8", "9" };
+static const char *tags[] = { "", "", "", "std", "dis", "", "", "8", "9" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
