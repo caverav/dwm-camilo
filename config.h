@@ -6,7 +6,7 @@ static const unsigned int gappx    = 5;   /* pixel gap between clients */
 static const int showbar           = 1;   /* 0 means no bar */
 static const int topbar            = 1;   /* 0 means bottom bar */
 static const int horizpadbar       = 5;   /* horizontal padding for statusbar */
-static const int vertpadbar        = 6;   /* vertical padding for statusbar */
+static const int vertpadbar        = 9;   /* vertical padding for statusbar */
 
 /* Mis configuraciones para mi note (Lenovo Ideapad s340), puede no funcionar en todos:(  */
 /* Configuraciones de teclas para controlar volumen y micrófono */
@@ -37,7 +37,8 @@ static const char *fonts[]     = {"Hack Nerd Font:size=11.5:antialias=true:autoh
                                   "JoyPixels:size=10:antialias=true:autohint=true",
                                   "monospace:size=10"
 						     	};
-static const char col_1[]  = "#282c34"; /* background color of bar */
+//static const char col_1[]  = "#282c34"; /* background color of bar */
+static const char col_1[]  = "#000000"; /* background color of bar */
 static const char col_2[]  = "#282c34"; /* border color unfocused windows */
 static const char col_3[]  = "#d7d7d7";
 static const char col_4[]  = "#924441"; /* border color focused windows and tags */
@@ -63,7 +64,7 @@ static const unsigned int alphas[][3] = {
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
-static const char *tags[] = { "", "", "", "std", "dis", "", "", "8", "9" };
+static const char *tags[] = { "", "", "", "std", "dis", "", "", "8", "9" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
