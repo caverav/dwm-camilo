@@ -29,11 +29,11 @@ read cpu a b c idle rest < /proc/stat
 total=$((a+b+c+idle))
 cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
 icon="🖥"
-icon1="🧠"
+icon1=""
 icon2=icon="⬇️"
 icon3="⬆️"
-icon4="💾"
-icon5="墳"
+icon4=""
+icon5=""
 SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
 #NET
  DEV=$(cat /proc/net/wireless | perl -ne '/(\w+):/ && print $1')
@@ -61,5 +61,5 @@ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
 #⬇️ $RKBPS kb ⬆️ $TKBPS kb
  MUTED=$(amixer sget Master | grep Left: | cut -d '[' -f 3 | sed -e 's/\]//')
  SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -d : -f 2)
- xsetroot -name "$icon $cpu% | 🧠 $MEM |  $SSID | 💾 $HDD | 🔊 $VOL $MUTED | $MICICON | $BAT | $TIME"
+ xsetroot -name " $cpu% | $icon1 $MEM |  $SSID | $icon4 $HDD |  $VOL $MUTED | $MICICON |  $BAT | $TIME"
 done &
