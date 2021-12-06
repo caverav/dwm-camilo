@@ -15,7 +15,7 @@ static const char *downvol[] = { "/usr/bin/pactl" ,  "set-sink-volume", "0"     
 static const char *mutevol[] = { "/usr/bin/pactl" ,  "set-sink-mute"  , "0"      , "toggle", NULL};
 static const char *mutemic[] = { "/usr/bin/amixer",  "set"            , "Capture", "toggle", NULL};
 
-/* Configuraciones para el brillo de la pantalla (todavía no funcionan) */
+/* Configuraciones para el brillo de la pantalla */
 static const char *brightup[]       = { "brightnessctl", "s", "10%+", NULL };
 static const char *brightdown[]     = { "brightnessctl", "s", "10%-", NULL };
 
@@ -113,10 +113,10 @@ static const char *dmenucmd[]    = { "dmenu_run", "-p", "Ejecutar: ", NULL };
 /* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
 
 /* the st terminal with tabbed */
-static const char *termcmd[]     = { "alacritty", NULL };
+static const char *termcmd[]     = { "kitty", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
-static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "alacritty", "-w", "''", NULL };
+static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "kitty", "-w", "''", NULL };
 
 static Key keys[] = {
 	/* modifier             chain key  key        function        argument */
