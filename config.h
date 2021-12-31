@@ -159,7 +159,7 @@ static Key keys[] = {
 
     /* Keybindings for programs using the format SUPER + ALT + "key" */
 	{ MODKEY|Mod1Mask,      -1,        XK_d,      spawn,          CMD("discord") },
-	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("sensible-browser || brave") },
+	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("firefox") },
 	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("kitty --class=pulsemixer pulsemixer") },
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
 
@@ -186,8 +186,9 @@ static Key keys[] = {
     { 0,                -1,             XF86XK_AudioRaiseVolume,    spawn,            {.v = upvol      } },
     { 0,                -1,             XF86XK_MonBrightnessUp,     spawn,            {.v = brightup   } },
     { 0,                -1,             XF86XK_MonBrightnessDown,   spawn,            {.v = brightdown } },
-	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            {.v = mutemic    } },
-	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            CMD("bash ~/dwm-camilo/scripts/notimic.sh") },
+	/* { 0,                -1,             XF86XK_AudioMicMute,        spawn,            {.v = mutemic    } }, */
+	{ 0,                -1,             XK_F4,        spawn,            {.v = mutemic    } },
+	{ 0,                -1,             XK_F4,        spawn,            CMD("bash ~/dwm-camilo/scripts/notimic.sh") },
 	/* { 0,                -1,             XF86XK_SplitScreen,         spawn,            {.v = lockscreen } }, */
 	{ 0,                -1,             XK_Print,                   spawn,            CMD("bash ~/dwm-camilo/screen/fullg") },
 	{ MODKEY|ShiftMask, -1,             XK_s,                       spawn,            CMD("bash ~/dwm-camilo/screen/sect") },
