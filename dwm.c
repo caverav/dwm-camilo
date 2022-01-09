@@ -1670,6 +1670,7 @@ setfocus(Client *c)
 			XA_WINDOW, 32, PropModeReplace,
 			(unsigned char *) &(c->win), 1);
 	}
+	setclientstate(c, NormalState);
 	sendevent(c, wmatom[WMTakeFocus]);
 }
 
