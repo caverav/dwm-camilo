@@ -51,7 +51,8 @@ SSID=$(nmcli -t -f active,ssid dev wifi | grep sí | cut -c 5- | cut -c -10)
  MEM=$(free -m | awk 'NR==2{printf "%s/%sMB\n", $3,$2,$3*100/$2 }')
  HDD=$(df -h | grep p7 | awk '{print $4 ,$5}')
  TIME=$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')
- MIC=$(amixer -D 'hw:0' | grep Capture | grep '\[' | grep Left | cut -c 43- | sed  -e 's/]//')
+ # MIC=$(amixer -D 'hw:0' | grep Capture | grep '\[' | grep Left | cut -c 43- | sed  -e 's/]//')
+ MIC=$(amixer  | grep Capture | grep Left | grep "\[" | cut -c 36- | sed -e 's/]//')
  if [ "$MIC" = "off" ]
  then
      MICICON=""

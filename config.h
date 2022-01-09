@@ -186,10 +186,15 @@ static Key keys[] = {
     { 0,                -1,             XF86XK_AudioRaiseVolume,    spawn,            {.v = upvol      } },
     { 0,                -1,             XF86XK_MonBrightnessUp,     spawn,            {.v = brightup   } },
     { 0,                -1,             XF86XK_MonBrightnessDown,   spawn,            {.v = brightdown } },
-	/* { 0,                -1,             XF86XK_AudioMicMute,        spawn,            {.v = mutemic    } }, */
-	{ 0,                -1,             XK_F4,        spawn,            {.v = mutemic    } },
-	{ 0,                -1,             XK_F4,        spawn,            CMD("bash ~/dwm-camilo/scripts/notimic.sh") },
+	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            {.v = mutemic    } },
+	{ 0,                -1,             XF86XK_AudioMicMute,        spawn,            CMD("bash ~/dwm-camilo/scripts/notimic.sh") },
+	{ 0,                -1,             0x1008ff06,        spawn,            CMD("asusctl -p") },
+	{ 0,                -1,             0x1008ff05,        spawn,            CMD("asusctl -n") },
+	{ 0,                -1,             0x1008ff41,        spawn,            CMD("asusctl profile -n") },
+	{ 0,                -1,             0x1008ff41,        spawn,            CMD("bash ~/dwm-camilo/scripts/notifan.sh") },
 	/* { 0,                -1,             XF86XK_SplitScreen,         spawn,            {.v = lockscreen } }, */
+	/* { 0,                -1,             XF86KbdBrightnessDown,        spawn,            CMD("asusctl -p") }, */
+	/* { 0,                -1,             XF86KbdBrightnessUp,        spawn,            CMD("asusctl -n") }, */
 	{ 0,                -1,             XK_Print,                   spawn,            CMD("bash ~/dwm-camilo/screen/fullg") },
 	{ MODKEY|ShiftMask, -1,             XK_s,                       spawn,            CMD("bash ~/dwm-camilo/screen/sect") },
 	{ ShiftMask,        -1,             XK_Print,                   spawn,            CMD("bash ~/dwm-camilo/screen/full") },
